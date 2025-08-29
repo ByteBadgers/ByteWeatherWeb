@@ -36,5 +36,5 @@ It provides real-time weather updates, a **3-day forecast**, dynamic backgrounds
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/YourGitHubUsername/ByteWeather.git
+   git clone https://github.com/ByteBadgers/ByteWeather.git
    cd ByteWeatherWeb
