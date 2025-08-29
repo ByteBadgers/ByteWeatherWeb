@@ -1,0 +1,156 @@
+/* Fade-in animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Default (fallback) */
+body {
+  font-family: "Segoe UI", sans-serif;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* 🌤 Dynamic Backgrounds */
+body.clear {
+  background: linear-gradient(to bottom, #87ceeb, #f0f8ff);
+}
+
+body.clouds {
+  background: linear-gradient(to bottom, #4b6cb7, #182848);
+}
+
+body.rain, body.drizzle, body.thunderstorm {
+  background: linear-gradient(to bottom, #2c3e50, #4ca1af);
+}
+
+body.snow {
+  background: linear-gradient(to bottom, #e0eafc, #cfdef3);
+}
+
+body.mist, body.fog, body.haze {
+  background: linear-gradient(to bottom, #757f9a, #d7dde8);
+}
+
+/* Container */
+.container {
+  max-width: 800px;
+  margin: auto;
+}
+
+/* Title */
+h1 {
+  margin-bottom: 20px;
+  font-size: 2rem;
+}
+
+/* Search bar */
+.search-bar {
+  margin-bottom: 20px;
+}
+.search-bar input {
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+}
+.search-bar button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: #ef233c;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+/* Shared card styles */
+.card, .forecast-card, .card.main {
+  background: rgba(0,0,0,0.4);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  animation: fadeInUp 0.6s ease both;
+}
+
+/* Cards */
+.card {
+  margin: 10px;
+  padding: 20px;
+  display: inline-block;
+  min-width: 200px;
+}
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Main Card */
+.card.main {
+  display: block;
+  margin: 20px auto;
+  width: 300px;
+  padding: 20px;
+}
+.card.main:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Temp text */
+.temp {
+  font-size: 60px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Sub cards container */
+.cards {
+  display: flex;
+  justify-content: center;
+}
+
+/* Forecast Section */
+.forecast {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+.forecast-card {
+  flex: 1 1 200px;
+  max-width: 220px;
+  padding: 15px;
+  text-align: center;
+}
+
+/* Forecast hover effect */
+.forecast-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Staggered forecast animation */
+.forecast-card:nth-child(1) { animation-delay: 0.2s; }
+.forecast-card:nth-child(2) { animation-delay: 0.4s; }
+.forecast-card:nth-child(3) { animation-delay: 0.6s; }
+
+/* Footer */
+footer {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #eee;
+}

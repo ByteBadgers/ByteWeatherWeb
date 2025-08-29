@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>ByteWeather</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<!-- Add weather condition as a CSS class -->
+<body class="{{ weather.main|lower }}">
+  <div class="container">
+    <h1>🌤️ ByteWeather</h1>
+
+    <!-- Search Form -->
+    <form method="POST" class="search-bar">
+      <input type="text" name="city" placeholder="Enter city..." value="{{ weather.city_name }}">
+      <button type="submit">Search</button>
+    </form>
+
+    <!-- Main Card -->
+    <div class="card main">
+      <h2>{{ weather.city_name }} — {{ weather.main }}</h2>
+      <p class="temp">{{ weather.temp }}°F</p>
+      <img src="http://openweathermap.org/img/wn/{{ weather.icon }}@2x.png" alt="icon">
+    </div>
+
+    <!-- Two Sub Cards -->
+    <div class="cards">
+      <div class="card">
+        <p>Min: {{ weather.temp_min }}°F</p>
+        <p>Max: {{ weather.temp_max }}°F</p>
+      </div>
+      <div class="card">
+        <p>Feels Like: {{ weather.feels_like }}°F</p>
+        <p>Humidity: {{ weather.humidity }}%</p>
+      </div>
+    </div>
+
+    <!-- Forecast Section -->
+    <h2>3-Day Forecast</h2>
+    <div class="forecast">
+      {% for day in forecast %}
+      <div class="card forecast-card">
+        <h3>{{ day.date }}</h3>
+        <img src="http://openweathermap.org/img/wn/{{ day.icon }}@2x.png" alt="icon">
+        <p class="temp">{{ day.temp }}°F</p>
+        <p>{{ day.main }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <footer>
+      <p>Last updated: {{ timestamp }}</p>
+    </footer>
+
+  </div>
+</body>
+</html>
+
