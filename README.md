@@ -3,7 +3,7 @@
 ByteWeather is a modern weather dashboard built with **Flask (Python)**, **OpenWeather API**, and **Jinja2 templating**.  
 It provides real-time weather updates, a **3-day forecast**, dynamic backgrounds based on conditions, and smooth animations for a polished UI experience.
 
-🔗 **Live Demo:** [ByteWeather on Render](https://your-app-name.onrender.com/) *(link after deployment)*
+🔗 **Live Demo:** [ByteWeather on Render]([https://your-app-name.onrender.com/](https://byteweatherweb.onrender.com/)
 
 ---
 
